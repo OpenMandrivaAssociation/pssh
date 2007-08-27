@@ -13,6 +13,7 @@ Url:     http://theether.org/pssh/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires: python
 Requires: openssh, python
+BuildRequires: python-setuptools
 Buildarch: noarch
 
 %description
