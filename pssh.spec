@@ -10,6 +10,7 @@ Source:  http://www.theether.org/pssh/%name-%version.tar.bz2
 Patch0:  pssh.patch
 License: BSD
 Url:     http://theether.org/pssh/
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildrequires: python
 Requires: openssh, python
 BuildRequires: python-setuptools, python-devel
