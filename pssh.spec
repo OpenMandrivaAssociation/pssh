@@ -1,13 +1,12 @@
 %define name	pssh
-%define version 1.3.1
-%define release %mkrel 2
+%define version 1.3.2
+%define release %mkrel 1
 Summary: Parallel SSH tools
 Name: 	 %name
 Version: %version
 Release: %release
 Group: 	 Networking/Remote access
-Source:  http://www.theether.org/pssh/%name-%version.tar.bz2
-Patch0:  pssh.patch
+Source:  http://www.theether.org/pssh/%name-%version.tar.lzma
 License: BSD
 Url:     http://theether.org/pssh/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -21,7 +20,6 @@ This package provides various parallel tools based on ssh and scp.
 
 %prep 
 %setup
-%patch0 -p0
 
 %build
 
@@ -40,6 +38,3 @@ This package provides various parallel tools based on ssh and scp.
 %if "%py_ver" == "2.5"
 %py_sitedir/*.egg-info
 %endif
-
-
-
