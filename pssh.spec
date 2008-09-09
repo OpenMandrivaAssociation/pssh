@@ -1,5 +1,5 @@
 %define name	pssh
-%define version 1.3.2
+%define version 1.4.2
 %define release %mkrel 1
 Summary: Parallel SSH tools
 Name: 	 %name
