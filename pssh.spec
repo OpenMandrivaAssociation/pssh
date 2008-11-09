@@ -1,27 +1,26 @@
-%define name	pssh
-%define version 1.4.2
-%define release %mkrel 1
-Summary: Parallel SSH tools
-Name: 	 %name
-Version: %version
-Release: %release
-Group: 	 Networking/Remote access
-Source:  http://www.theether.org/pssh/%name-%version.tar.lzma
-License: BSD
-Url:     http://theether.org/pssh/
+%define name		pssh
+%define version		1.4.3
+%define release		1
+
+Summary:	Parallel SSH tools
+Name:		%{name}
+Version:	%{version}
+Release:	%mkrel %{release}
+Group:		Networking/Remote access
+Source:		http://www.theether.org/pssh/%name-%version.tar.lzma
+License:	BSD
+Url:		http://theether.org/pssh/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Buildrequires: python
-Requires: openssh, python
-BuildRequires: python-setuptools, python-devel
-Buildarch: noarch
+Requires:	openssh
+BuildRequires:	python-setuptools 
+Buildarch:	noarch
+%py_requires -d
 
 %description
-This package provides various parallel tools based on ssh and scp.
+This package provides parallel versions of the OpenSSH tools.
 
 %prep 
-%setup
-
-%build
+%setup -q
 
 %install
 %__rm -rf %{buildroot}
