@@ -1,11 +1,11 @@
 %define name		pssh
 %define version		1.4.3
-%define release		1
+%define rel		2
 
 Summary:	Parallel SSH tools
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%mkrel %rel
 Group:		Networking/Remote access
 Source:		http://www.theether.org/pssh/%name-%version.tar.lzma
 License:	BSD
@@ -34,6 +34,4 @@ This package provides parallel versions of the OpenSSH tools.
 %doc TODO ChangeLog INSTALL AUTHORS COPYING doc/pssh-HOWTO.html
 %{_bindir}/*
 %{py_sitedir}/psshlib
-%if "%py_ver" == "2.5"
-%py_sitedir/*.egg-info
-%endif
+%{py_sitedir}/*.egg-info
