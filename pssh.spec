@@ -1,6 +1,6 @@
 %define name		pssh
 %define version		1.4.3
-%define rel		2
+%define rel		3
 
 Summary:	Parallel SSH tools
 Name:		%{name}
