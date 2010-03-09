@@ -1,15 +1,15 @@
 %define name		pssh
-%define version		1.4.3
-%define rel		3
+%define version		2.1.1
+%define release		%mkrel 1
 
 Summary:	Parallel SSH tools
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %rel
+Release:	%{release}
 Group:		Networking/Remote access
-Source:		http://www.theether.org/pssh/%name-%version.tar.lzma
+Source:		http://parallel-ssh.googlecode.com/files/%{name}-%{version}.tar.gz
 License:	BSD
-Url:		http://theether.org/pssh/
+Url:		http://parallel-ssh.googlecode.com/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	openssh
 BuildRequires:	python-setuptools 
@@ -17,7 +17,9 @@ Buildarch:	noarch
 %py_requires -d
 
 %description
-This package provides parallel versions of the OpenSSH tools.
+PSSH provides parallel versions of OpenSSH and related tools. Included
+are pssh, pscp, prsync, pnuke, and pslurp. The project includes
+psshlib which can be used within custom applications.
 
 %prep 
 %setup -q
@@ -31,7 +33,8 @@ This package provides parallel versions of the OpenSSH tools.
 
 %files
 %defattr(-,root,root)
-%doc TODO ChangeLog INSTALL AUTHORS COPYING doc/pssh-HOWTO.html
+%doc ChangeLog AUTHORS COPYING 
 %{_bindir}/*
 %{py_sitedir}/psshlib
 %{py_sitedir}/*.egg-info
+
