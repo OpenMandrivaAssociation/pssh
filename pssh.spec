@@ -1,5 +1,5 @@
 %define name		pssh
-%define version		2.3
+%define version		2.3.1
 %define release		%mkrel 1
 
 Summary:	Parallel SSH tools
@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Group:		Networking/Remote access
 Source:		http://parallel-ssh.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:		man-install-2.2.2.patch
+Patch0:		man-install-2.3.1.patch
 License:	BSD
 Url:		http://parallel-ssh.googlecode.com/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -38,7 +38,7 @@ The psshlib library enables custom applications to use PSSH.
 %__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 %__install -d 755 %{buildroot}%{_mandir}/man1/
-%__install -m 644 man/man1/pssh.1 %{buildroot}%{_mandir}/man1/
+%__install -m 644 man/man1/*.1 %{buildroot}%{_mandir}/man1/
 
 %clean
 %__rm -rf %{buildroot}
@@ -47,7 +47,7 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 %defattr(-,root,root)
 %doc ChangeLog AUTHORS COPYING 
 %{_bindir}/p*
-%{_mandir}/man1/pssh*
+%{_mandir}/man1/p*
 
 %files -n python-psshlib
 %{py_sitedir}/psshlib
