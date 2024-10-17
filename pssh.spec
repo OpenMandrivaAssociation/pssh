@@ -10,7 +10,7 @@ Group:		Networking/Remote access
 Source:		http://parallel-ssh.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		man-install-2.3.1.patch
 License:	BSD
-Url:		http://parallel-ssh.googlecode.com/
+Url:		https://parallel-ssh.googlecode.com/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	openssh
 Requires:	python-psshlib = %{version}-%{release}
